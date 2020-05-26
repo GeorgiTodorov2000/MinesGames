@@ -20,14 +20,20 @@ public class MinesGames {
         Scanner scanner = new Scanner( new File("C:\\Users\\bgrok\\IdeaProjects\\MinesGames\\src\\input") );
         String text = scanner.useDelimiter("\\A").next();
         char[] fileChars = new char[3];
+
         int count = 0;
         int[] fileCharsAsInt = new int[3];
+
         for(int i =0; i < text.length(); i++) {
             if(Character.isDigit(text.charAt(i))) {
                 fileChars[count] = text.charAt(i);
                 fileCharsAsInt[count] = Character.getNumericValue(fileChars[count]);
                 count++;
             }
+        }
+        if (fileCharsAsInt[0] < 4 || fileCharsAsInt[1] < 4) {
+            System.out.println("Minimum input for game table 4");
+            System.exit(1);
         }
         if (fileCharsAsInt[0] * fileCharsAsInt[1] - 2 < fileCharsAsInt[2]) {
             System.out.println("Too many mines");
