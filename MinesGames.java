@@ -35,6 +35,10 @@ public class MinesGames {
             System.out.println("Minimum input for game table 4");
             System.exit(1);
         }
+        if (fileCharsAsInt[2] < 5) {
+            System.out.println("Minimum number of mines is 5");
+            System.exit(1);
+        }
         if (fileCharsAsInt[0] * fileCharsAsInt[1] - 2 < fileCharsAsInt[2]) {
             System.out.println("Too many mines");
             System.exit(1);
